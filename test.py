@@ -7,14 +7,12 @@ class TestStringMethods(unittest.TestCase):
         self.assertEqual(grade, ["", False])
 
     def test_notvalidatedgrade(self):
-        self.assertEqual([4, False], [4, False])
+        grade = [4, False]
+        self.assertEqual(grade, [4, False])
 
-    def test_split(self):
-        s = 'hello world'
-        self.assertEqual(s.split(), ['hello', 'world'])
-        # check that s.split fails when the separator is not a string
-        with self.assertRaises(TypeError):
-            s.split(2)
+    def test_validatedgrade(self):
+        grade = [4, True]
+        self.assertEqual(grade, [4, True])
 
 if __name__ == '__main__':
     unittest.main()
