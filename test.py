@@ -1,10 +1,13 @@
 import unittest
+from student import Student
 
 class TestStringMethods(unittest.TestCase):
+    def setUp(self):
+        self.student = Student(["", False])
 
     def test_nograde(self):
-        grade = ["", False]
-        self.assertEqual(grade, ["", False])
+        testArray=["", False]
+        self.assertEqual(self.student.getGrade(), testArray)
 
     def test_notvalidatedgrade(self):
         grade = [4, False]
