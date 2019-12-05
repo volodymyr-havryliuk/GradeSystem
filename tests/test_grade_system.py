@@ -66,9 +66,13 @@ class GradesSystemTest(unittest.TestCase):
         self.dean_office_employee.validate_grade(self.student, index=len(self.student.grades)-1)
         self.assertFalse(self.student.is_grade_validated(index=len(self.student.grades)-1), "Student grade should NOT have validated grade")
 
-def testing_grading_functionality():
-    suite = unittest.TestSuite()
-    return suite
+    def test_dean_office_set_subject_to_teacher(self, subject='SDM'):
+        self.dean_office_employee.set_subject_to_teacher(self.professor, subject)
+        self.assertTrue(self.professor.has_subject(subject), 'the teacher does not had the subject SDM')
+
+#def testing_grading_functionality():
+#    suite = unittest.TestSuite()
+#   return suite
 
 if __name__ == '__main__':
     unittest.main()
