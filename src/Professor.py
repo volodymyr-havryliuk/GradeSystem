@@ -6,4 +6,5 @@ class Professor(Person):
         Person.__init__(self, name, surname)
 
     def put_grade(self, grade, student):
-        student.grade = grade
+        student.grade.append(grade)
+        student.grade_validation.append(False)
